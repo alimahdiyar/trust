@@ -172,6 +172,7 @@ s{
 	transition: transform 0.1s ease-out;
 
 	text-align: center;
+
 }
 .button #background{
 	position: absolute;
@@ -199,7 +200,8 @@ s{
 
 }
 .button #hitbox{
-	position: absolute;
+	position:relative;
+	z-index: 1;
 	width:195px; height:55px;
 	cursor: pointer;
 }
