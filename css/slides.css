@@ -131,6 +131,10 @@ s{
 	position: absolute;
 	transition: left 0.5s ease-in-out, top 0.5s ease-in-out;
 }
+/* a quick fix to put the sandbox back in the page in Persian (right to left) */
+.object_sandbox{
+	transition: left 0.5s ease-in-out, top 0.5s ease-in-out;
+}
 .fader{
 	transition: opacity 0.5s ease-in-out !important;
 }
@@ -352,6 +356,7 @@ s{
 .sandbox_pop_icon{
 	width: 40px;
 	height: 40px;
+	left: 0px; /*fix for persian*/
 	background: url(../assets/ui/sandbox_hats.png);
 	background-size: auto 100%;
 }

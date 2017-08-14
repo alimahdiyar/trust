@@ -6,7 +6,7 @@ function SandboxUI(config){
 
 	// Create DOM
 	self.dom = document.createElement("div");
-	self.dom.className = "object";
+	self.dom.className = "objectd_sandbox";
 	var dom = self.dom;
 
 	/////////////////////////////////////////
@@ -69,7 +69,7 @@ function SandboxUI(config){
 	};
 	_makeHitbox(Words.get("label_population"), 30, 100, 0);
 	_makeHitbox(Words.get("label_payoffs"), 220, 100, 1);
-	_makeHitbox(Words.get("label_rules"), 366, 100, 2);
+	_makeHitbox(Words.get("label_rules"), 366, 60, 2); //firx for persian 100->60
 
 	// Pages
 	var pages = [];
@@ -133,7 +133,7 @@ function SandboxUI(config){
 		// Label: Amount
 		var popAmount = document.createElement("div");
 		popAmount.className = "sandbox_pop_label";
-		popAmount.style.textAlign = "right";
+		popAmount.style.textAlign = "left";  // fix for persian
 		popAmount.style.color = PEEP_METADATA[peepID].color;
 		popDOM.appendChild(popAmount);
 		listen(self, message, function(value){
