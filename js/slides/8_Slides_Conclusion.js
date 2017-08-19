@@ -40,7 +40,7 @@ SLIDES.push({
 		});
 		self.add({
 			id:"text8", type:"TextBox",
-			x:74, y:440, width:520, align:"right",
+			x:300, y:440, width:520, align:"right",
 			text_id:"conclusion_4"
 		});
 
@@ -53,7 +53,7 @@ SLIDES.push({
 
 		// Button
 		self.add({
-			id:"button", type:"Button", x:615, y:481, 
+			id:"button", type:"Button", x:100, y:525, 
 			text_id:"conclusion_btn", size:"long",
 			message:"slideshow/scratch"
 		});
