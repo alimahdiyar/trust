@@ -141,8 +141,8 @@ SLIDES.push({
 			if(scoreA>0) scoreA="+"+scoreA;
 			if(scoreB>0) scoreB="+"+scoreB;
 			match_header = Words.get("match_header_3");
-			match_header = match_header.replace(/\[A\]/g, "<span class='"+charA+"'>"+scoreA+"</span>");
-			match_header = match_header.replace(/\[B\]/g, "<span class='"+charB+"'>"+scoreB+"</span>");
+			match_header = match_header.replace(/\[A\]/g, "<span dir='ltr' class='"+charA+"'>"+scoreA+"</span>");
+			match_header = match_header.replace(/\[B\]/g, "<span dir='ltr' class='"+charB+"'>"+scoreB+"</span>");
 			words += match_header+"<br><br><br>";
 
 			// PUT IN THE WORDS

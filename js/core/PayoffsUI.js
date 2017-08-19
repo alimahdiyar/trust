@@ -7,6 +7,7 @@ function PayoffsUI(config){
 	// Create DOM
 	self.dom = document.createElement("div");
 	self.dom.className = "object";
+	self.dom.style.direction = "ltr" // fix for signed numbers
 	var dom = self.dom;
 	_configText(config, dom);
 	if(config.scale){
@@ -21,9 +22,9 @@ function PayoffsUI(config){
 	dom.appendChild(bg.dom);
 
 	// Labels
-	dom.appendChild(_makeLabel("label_cooperate", {x:148, y:17, rotation:45, align:"center", color:"#cccccc"}));
+	dom.appendChild(_makeLabel("label_cooperate", {x:170, y:10, rotation:45, align:"center", color:"#cccccc"}));
 	dom.appendChild(_makeLabel("label_cooperate", {x:52, y:17, rotation:-45, align:"center", color:"#cccccc"}));
-	dom.appendChild(_makeLabel("label_cheat", {x:245, y:90, rotation:45, align:"center", color:"#cccccc"}));
+	dom.appendChild(_makeLabel("label_cheat", {x:260, y:85, rotation:45, align:"center", color:"#cccccc"}));
 	dom.appendChild(_makeLabel("label_cheat", {x:6, y:90, rotation:-45, align:"center", color:"#cccccc"}));
 
 	// Inc(rement) De(crement) Numbers

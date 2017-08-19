@@ -415,6 +415,7 @@ s{
 	text-align: center;
 	font-size: 50px;
 	color: #666666;
+	direction: ltr;  /* to fix the signed numbers in persian*/
 }
 #scoreboard > div:nth-child(1){
 	left: 20px;
