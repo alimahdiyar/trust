@@ -30,6 +30,7 @@ window.onload = function(){
 
 			// [FOR DEBUGGING]
 			publish("slideshow/next");
+			publish("slideshow/next");
 			//publish("slideshow/scratch", ["credits"]);
 
 		});
