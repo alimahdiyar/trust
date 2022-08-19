@@ -27,28 +27,28 @@ function SlideSelect(config){
 
 function SlideSelectDot(slide){
 
-	// var self = this;
-	// self.slide = slide;
-	//
-	// // DOM
-	// self.dom = document.createElement("div");
-	// self.dom.className = "dot";
-	// self.dom.setAttribute("data-balloon", Words.get("chapter_"+slide.id));
-	// self.dom.setAttribute("data-balloon-pos", "up");
-	//
-	// // On Click
-	// self.dom.onclick = function(){
-	// 	publish("slideshow/scratch", [slide.id]);
-	// };
-	//
-	// // Listen to when the slide changes
-	// subscribe("slideshow/slideChange", function(id){
-	// 	if(!id) return; // nah
-	// 	if(id==slide.id){
-	// 		self.dom.setAttribute("selected","yes");
-	// 	}else{
-	// 		self.dom.removeAttribute("selected");
-	// 	}
-	// });
+	var self = this;
+	self.slide = slide;
+
+	// DOM
+	self.dom = document.createElement("div");
+	self.dom.className = "dot";
+	self.dom.setAttribute("data-balloon", Words.get("chapter_"+slide.id));
+	self.dom.setAttribute("data-balloon-pos", "up");
+
+	// On Click
+	self.dom.onclick = function(){
+		publish("slideshow/scratch", [slide.id]);
+	};
+
+	// Listen to when the slide changes
+	subscribe("slideshow/slideChange", function(id){
+		if(!id) return; // nah
+		if(id==slide.id){
+			self.dom.setAttribute("selected","yes");
+		}else{
+			self.dom.removeAttribute("selected");
+		}
+	});
 
 }
