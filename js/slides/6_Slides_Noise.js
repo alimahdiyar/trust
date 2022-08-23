@@ -166,11 +166,11 @@ SLIDES.push({
 		// Tournament
 		Tournament.resetGlobalVariables();
 		Tournament.INITIAL_AGENTS = [
-			{strategy:"tf2t", count:3},
-			{strategy:"pavlov", count: 0},
+			{strategy:"tf2t", count:6},
+			{strategy:"pavlov", count:0},
 			{strategy:"random", count:0},
 			{strategy:"tft", count:6},
-			{strategy:"all_c", count:6}
+			{strategy:"all_c", count:13}
 		];
 		PD.NOISE = 0.05;
 		self.add({id:"tournament", type:"Tournament", x:-20, y:20});
