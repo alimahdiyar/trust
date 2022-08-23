@@ -123,16 +123,15 @@ SLIDES.push({
 			character: "tf2t"
 		});
 		self.add({
+			id:"char_pavlov", type:"CharacterTextBox",
+			x:160, y:190, width:640,
+			character: "pavlov"
+		});
+		self.add({
 			id:"char_random", type:"CharacterTextBox",
 			x:160, y:320, width:640,
 			character: "random"
 		});
-		// self.add({
-		// 	id:"char_pavlov", type:"CharacterTextBox",
-		// 	x:160, y:190, width:640,
-		// 	character: "pavlov"
-		// });
-
 
 		// Next...
 		self.add({
@@ -168,10 +167,10 @@ SLIDES.push({
 		Tournament.resetGlobalVariables();
 		Tournament.INITIAL_AGENTS = [
 			{strategy:"tf2t", count:3},
-			// {strategy:"pavlov", count:3},
+			{strategy:"pavlov", count:3},
 			{strategy:"random", count:3},
 			{strategy:"tft", count:3},
-			{strategy:"all_c", count:16}
+			{strategy:"all_c", count:13}
 		];
 		PD.NOISE = 0.05;
 		self.add({id:"tournament", type:"Tournament", x:-20, y:20});
@@ -201,10 +200,8 @@ SLIDES.push({
 		var y = 295;
 		var dx = 200;
 		var dy = 70;
-		_addButton("tf2t", x, y);
-		// _addButton("pavlov", x+dx, y);
-		_addButton("random", x, y+dy); 
-		_addButton("tft", x+dx, y+dy);
+		_addButton("tf2t", x, y); _addButton("pavlov", x+dx, y);
+		_addButton("random", x, y+dy); _addButton("tft", x+dx, y+dy);
 		_addButton("all_c", x, y+dy*2);
 
 		// WHO'S WHO?
@@ -220,8 +217,8 @@ SLIDES.push({
 		self.remove("bet_all_c");
 		self.remove("bet_tft");
 		self.remove("bet_tf2t");
-		// self.remove("bet_pavlov");
-		// self.remove("bet_random");
+		self.remove("bet_pavlov");
+		self.remove("bet_random");
 		self.remove("forgot");
 	}
 });
@@ -325,10 +322,10 @@ SLIDES.push({
 		Tournament.resetGlobalVariables();
 		Tournament.INITIAL_AGENTS = [
 			{strategy:"tf2t", count:3},
-			// {strategy:"pavlov", count:3},
+			{strategy:"pavlov", count:3},
 			{strategy:"random", count:3},
 			{strategy:"tft", count:3},
-			{strategy:"all_d", count:16}
+			{strategy:"all_d", count:13}
 		];
 		PD.NOISE = 0.05;
 		o.tournament.reset();
