@@ -122,16 +122,16 @@ SLIDES.push({
 			x:160, y:70, width:640,
 			character: "tf2t"
 		});
-		self.add({
-			id:"char_pavlov", type:"CharacterTextBox",
-			x:160, y:190, width:640,
-			character: "pavlov"
-		});
-		self.add({
-			id:"char_random", type:"CharacterTextBox",
-			x:160, y:320, width:640,
-			character: "random"
-		});
+		// self.add({
+		// 	id:"char_pavlov", type:"CharacterTextBox",
+		// 	x:160, y:190, width:640,
+		// 	character: "pavlov"
+		// });
+		// self.add({
+		// 	id:"char_random", type:"CharacterTextBox",
+		// 	x:160, y:320, width:640,
+		// 	character: "random"
+		// });
 
 		// Next...
 		self.add({
@@ -167,8 +167,8 @@ SLIDES.push({
 		Tournament.resetGlobalVariables();
 		Tournament.INITIAL_AGENTS = [
 			{strategy:"tf2t", count:3},
-			{strategy:"pavlov", count:3},
-			{strategy:"random", count:3},
+			{strategy:"pavlov", count: 0},
+			{strategy:"random", count:0},
 			{strategy:"tft", count:3},
 			{strategy:"all_c", count:13}
 		];
@@ -200,8 +200,10 @@ SLIDES.push({
 		var y = 295;
 		var dx = 200;
 		var dy = 70;
-		_addButton("tf2t", x, y); _addButton("pavlov", x+dx, y);
-		_addButton("random", x, y+dy); _addButton("tft", x+dx, y+dy);
+		_addButton("tf2t", x, y);
+		// _addButton("pavlov", x+dx, y);
+		// _addButton("random", x, y+dy); 
+		_addButton("tft", x+dx, y+dy);
 		_addButton("all_c", x, y+dy*2);
 
 		// WHO'S WHO?
