@@ -218,9 +218,9 @@ SLIDES.push({
 	onend: function(self){
 		self.remove("bet_all_c");
 		self.remove("bet_tft");
-		self.remove("bet_tf2t");
-		self.remove("bet_pavlov");
-		self.remove("bet_random");
+		// self.remove("bet_tf2t");
+		// self.remove("bet_pavlov");
+		// self.remove("bet_random");
 		self.remove("forgot");
 	}
 });
