@@ -167,8 +167,8 @@ SLIDES.push({
 		Tournament.resetGlobalVariables();
 		Tournament.INITIAL_AGENTS = [
 			{strategy:"tf2t", count:6},
-			{strategy:"pavlov", count:0},
-			{strategy:"random", count:0},
+			{strategy:"pavlov", count:3},
+			{strategy:"random", count:3},
 			{strategy:"tft", count:6},
 			{strategy:"all_c", count:13}
 		];
