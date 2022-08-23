@@ -169,8 +169,8 @@ SLIDES.push({
 			{strategy:"tf2t", count:3},
 			{strategy:"pavlov", count: 0},
 			{strategy:"random", count:0},
-			{strategy:"tft", count:3},
-			{strategy:"all_c", count:13}
+			{strategy:"tft", count:6},
+			{strategy:"all_c", count:6}
 		];
 		PD.NOISE = 0.05;
 		self.add({id:"tournament", type:"Tournament", x:-20, y:20});
