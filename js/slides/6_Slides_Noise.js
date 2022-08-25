@@ -1,22 +1,5 @@
 // [FOR DEBUGGING]
 
-// One-off with noise
-SLIDES.push({
-	id: "noise",
-	onstart: function(self){
-
-		Tournament.resetGlobalVariables();
-
-		publish("slideshow/scratch")
-
-
-	},
-	onend: function(self){
-		unlisten(self);
-		self.clear();
-	}
-});
-
 // New characters
 SLIDES.push({
 
