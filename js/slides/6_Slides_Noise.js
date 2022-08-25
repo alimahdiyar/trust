@@ -50,7 +50,7 @@ SLIDES.push({
 
 			}
 		});
-
+		publish("slideshow/scratch")
 		// Re-activate...
 		var _foreverWar = false;
 		var _foreverMove = "cheat";
