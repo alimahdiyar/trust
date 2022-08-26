@@ -139,7 +139,11 @@ SLIDES.push({
 	onstart: function(self){
 		var o = self.objects;
 		// Words
-		o.text.setTextID("noise_evo_3");
+		self.add({
+			id:"text", type:"TextBox",
+			x:510, y:30, width:450, height:500,
+			text_id:"noise_evo_3"
+		});
 		_hide(o.text); _fadeIn(o.text, 100);
 		// Tournament
 		Tournament.resetGlobalVariables();
