@@ -74,7 +74,7 @@ SLIDES.push({
 SLIDES.push({
 	onstart: function(self){
 
-        publish("slideshow/scratch")
+        // publish("slideshow/scratch")
 
 		var o = self.objects;
 		// Words
@@ -88,13 +88,13 @@ SLIDES.push({
 		var y = 175;
 		var dy = 70;
 
-        // // BUTTON
-        // self.add({
-        //     id:"btn_next", type:"Button", x:510, y:366, 
-        //     text_id:"noise_evo_2_2_btn", size:"long",
-        //     message:"slideshow/next"
-        // });
-        // _hide(o.btn_next); _fadeIn(o.btn_next, 300);
+        // BUTTON
+        self.add({
+            id:"btn_next", type:"Button", x:510, y:366, 
+            text_id:"noise_evo_2_2_btn", size:"long",
+            message:"slideshow/next"
+        });
+        _hide(o.btn_next); _fadeIn(o.btn_next, 300);
 
         // self.add({
 		// 	id:"playButton", type:"Button", size:"short",
@@ -139,6 +139,7 @@ SLIDES.push({
 	onstart: function(self){
 		var o = self.objects;
 		
+
 		// Tournament
 		Tournament.resetGlobalVariables();
 		Tournament.INITIAL_AGENTS = [
