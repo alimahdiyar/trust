@@ -281,6 +281,12 @@ SLIDES.push({
 		// Tournament
 		o.tournament.reset();
 
+		// SHOW PLAYER
+		_fadeIn(o.playButton,1); o.playButton.activate();
+		_fadeIn(o.stepButton,1); o.stepButton.activate();
+		_fadeIn(o.resetButton,1); o.resetButton.activate();
+		o.playButton.setText("label_start");
+
 		// Slider!
 		var x = 510;
 		var y = 200;
