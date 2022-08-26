@@ -204,69 +204,69 @@ SLIDES.push({
 	}
 });
 
-SLIDES.push({
-	onstart: function(self){
+// SLIDES.push({
+// 	onstart: function(self){
 
-		var o = self.objects;
+// 		var o = self.objects;
 
         
 
-		// SHOW PLAYER
-		_fadeIn(o.playButton,1); o.playButton.activate();
-		_fadeIn(o.stepButton,1); o.stepButton.activate();
-		_fadeIn(o.resetButton,1); o.resetButton.activate();
-		o.playButton.setText("label_start");
+// 		// SHOW PLAYER
+// 		_fadeIn(o.playButton,1); o.playButton.activate();
+// 		_fadeIn(o.stepButton,1); o.stepButton.activate();
+// 		_fadeIn(o.resetButton,1); o.resetButton.activate();
+// 		o.playButton.setText("label_start");
 
-		// Words
-		var words = Words.get("noise_evo_4").replace(/\[CHAR\]/g, "<span class='"+_.answer+"'>"+Words.get("label_"+_.answer)+"</span>");
-		o.text.setText(words);
-		_hide(o.text); _fadeIn(o.text, 100);
+// 		// Words
+// 		var words = Words.get("noise_evo_4").replace(/\[CHAR\]/g, "<span class='"+_.answer+"'>"+Words.get("label_"+_.answer)+"</span>");
+// 		o.text.setText(words);
+// 		_hide(o.text); _fadeIn(o.text, 100);
 
-		/////////////////////////////////////////
-		// SHOW THE NEXT WORDS, and a NEXT
+// 		/////////////////////////////////////////
+// 		// SHOW THE NEXT WORDS, and a NEXT
 
-        publish("slideshow/next")
+//         publish("slideshow/next")
 
-		// NEXT
-		var reproduceSteps = 0;
-		_.misc = {};
-		listen(_.misc, "tournament/step/completed", function(step){
-			if(step=="reproduce"){
-				reproduceSteps++;
-				if(reproduceSteps==8){
+// 		// NEXT
+// 		var reproduceSteps = 0;
+// 		_.misc = {};
+// 		listen(_.misc, "tournament/step/completed", function(step){
+// 			if(step=="reproduce"){
+// 				reproduceSteps++;
+// 				if(reproduceSteps==8){
 
-					// WORDS
-					var words = (_.answer=="tf2t") ? Words.get("noise_evo_4_2_correct") : Words.get("noise_evo_4_2_incorrect");
-					words += " ";
-					words += Words.get("noise_evo_4_2");
-					self.add({
-						id:"text_next", type:"TextBox",
-						x:510, y:116, width:450,
-						text: words
-					});
-					_hide(o.text_next); _fadeIn(o.text_next, 100);
+// 					// WORDS
+// 					var words = (_.answer=="tf2t") ? Words.get("noise_evo_4_2_correct") : Words.get("noise_evo_4_2_incorrect");
+// 					words += " ";
+// 					words += Words.get("noise_evo_4_2");
+// 					self.add({
+// 						id:"text_next", type:"TextBox",
+// 						x:510, y:116, width:450,
+// 						text: words
+// 					});
+// 					_hide(o.text_next); _fadeIn(o.text_next, 100);
 
-					// BUTTON
-					self.add({
-						id:"btn_next", type:"Button", x:510, y:446, 
-						text_id:"noise_evo_4_2_btn", size:"long",
-						message:"slideshow/next"
-					});
-					_hide(o.btn_next); _fadeIn(o.btn_next, 300);
+// 					// BUTTON
+// 					self.add({
+// 						id:"btn_next", type:"Button", x:510, y:446, 
+// 						text_id:"noise_evo_4_2_btn", size:"long",
+// 						message:"slideshow/next"
+// 					});
+// 					_hide(o.btn_next); _fadeIn(o.btn_next, 300);
 
-				}
-			}
-		});
+// 				}
+// 			}
+// 		});
         
         
 
-	},
-	onend: function(self){
-		self.remove("text_next");
-		self.remove("btn_next");
-		unlisten(_.misc);
-	}
-});
+// 	},
+// 	onend: function(self){
+// 		self.remove("text_next");
+// 		self.remove("btn_next");
+// 		unlisten(_.misc);
+// 	}
+// });
 
 SLIDES.push({
 	onstart: function(self){
