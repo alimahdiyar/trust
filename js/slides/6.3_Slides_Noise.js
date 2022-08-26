@@ -138,12 +138,7 @@ SLIDES.push({
 SLIDES.push({
 	onstart: function(self){
 		var o = self.objects;
-		// Words
-		self.add({
-			id:"text", type:"TextBox",
-			x:510, y:30, width:450, height:500,
-			text_id:"noise_evo_3"
-		});
+		
 		_hide(o.text); _fadeIn(o.text, 100);
 		// Tournament
 		Tournament.resetGlobalVariables();
@@ -161,7 +156,7 @@ SLIDES.push({
 		self.add({
 			id:"text", type:"TextBox",
 			x:510, y:30, width:450, height:500,
-			text_id:"noise_evo_1"
+			text_id:"noise_evo_3"
 		});
 
 		// HIDE PLAYER
