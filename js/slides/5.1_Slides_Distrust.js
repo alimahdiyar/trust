@@ -109,15 +109,15 @@ SLIDES.push({
 			message: "rules/turns"
 		});
 		_.misc = {};
-		var _updateLabel = function(value){
-			var words = (value==1) ? Words.get("sandbox_rules_1_single") : Words.get("sandbox_rules_1"); // plural?
-			words = words.replace(/\[N\]/g, value+""); // replace [N] with the number value
-			o.roundsLabel.setText("<b>"+words+"</b>");
-		};
-		listen(_.misc, "rules/turns", function(value){
-			_updateLabel(value);
-			o.tournament.reset();
-		});
+		// var _updateLabel = function(value){
+		// 	var words = (value==1) ? Words.get("sandbox_rules_1_single") : Words.get("sandbox_rules_1"); // plural?
+		// 	words = words.replace(/\[N\]/g, value+""); // replace [N] with the number value
+		// 	o.roundsLabel.setText("<b>"+words+"</b>");
+		// };
+		// listen(_.misc, "rules/turns", function(value){
+		// 	_updateLabel(value);
+		// 	o.tournament.reset();
+		// });
 		o.roundsSlider.setValue(10);
 		_updateLabel(10);
 		_hide(o.roundsLabel); _fadeIn(o.roundsLabel, 500);
