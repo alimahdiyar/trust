@@ -9,7 +9,7 @@ SLIDES.push({
 
 		var o = self.objects;
 
-        publish("slideshow/scratch")
+        publish("slideshow/next")
 		// Tournament
 		Tournament.resetGlobalVariables();
 		Tournament.INITIAL_AGENTS = [
@@ -75,7 +75,7 @@ SLIDES.push({
 
         var o = self.objects;
 
-        publish("slideshow/scratch")
+        publish("slideshow/next")
 
 		// Words
 		var words = Words.get("noise_evo_2").replace(/\[CHAR\]/g, "<span class='"+_.answer+"'>"+Words.get("label_"+_.answer)+"</span>");
@@ -137,7 +137,7 @@ SLIDES.push({
 
 		var o = self.objects;
 
-        publish("slideshow/scratch")
+        publish("slideshow/next")
 
 		// Words
 		o.text.setTextID("noise_evo_3");
@@ -206,7 +206,7 @@ SLIDES.push({
 
 		var o = self.objects;
 
-        publish("slideshow/scratch")
+        publish("slideshow/next")
 
 		// SHOW PLAYER
 		_fadeIn(o.playButton,1); o.playButton.activate();
