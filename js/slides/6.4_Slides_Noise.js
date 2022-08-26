@@ -9,8 +9,7 @@ SLIDES.push({
 
 		var o = self.objects;
 
-        publish("slideshow/scratch")
-        
+
 		// Tournament
 		Tournament.resetGlobalVariables();
 		Tournament.INITIAL_AGENTS = [
@@ -60,6 +59,8 @@ SLIDES.push({
 			text_id:"forgot_whos_who"
 		});
 
+        publish("slideshow/next")
+
 	},
 	onend: function(self){
 		self.remove("bet_all_c");
@@ -75,8 +76,6 @@ SLIDES.push({
 	onstart: function(self){
 
         var o = self.objects;
-
-        publish("slideshow/next")
 
 		// Words
 		var words = Words.get("noise_evo_2").replace(/\[CHAR\]/g, "<span class='"+_.answer+"'>"+Words.get("label_"+_.answer)+"</span>");
@@ -127,6 +126,8 @@ SLIDES.push({
         });
         _hide(o.btn_next); _fadeIn(o.btn_next, 300);
 
+        publish("slideshow/next")
+
 	},
 	onend: function(self){
 		self.remove("btn_next");
@@ -138,7 +139,6 @@ SLIDES.push({
 
 		var o = self.objects;
 
-        publish("slideshow/next")
 
 		// Words
 		o.text.setTextID("noise_evo_3");
@@ -191,6 +191,8 @@ SLIDES.push({
 			text_id:"forgot_whos_who"
 		});
 
+        publish("slideshow/next")
+
 	},
 	onend: function(self){
 		self.remove("bet_all_d");
@@ -207,7 +209,7 @@ SLIDES.push({
 
 		var o = self.objects;
 
-        publish("slideshow/next")
+        
 
 		// SHOW PLAYER
 		_fadeIn(o.playButton,1); o.playButton.activate();
@@ -253,6 +255,8 @@ SLIDES.push({
 				}
 			}
 		});
+        
+        publish("slideshow/next")
 
 	},
 	onend: function(self){
