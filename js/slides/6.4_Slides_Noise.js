@@ -9,7 +9,8 @@ SLIDES.push({
 
 		var o = self.objects;
 
-        publish("slideshow/next")
+        publish("slideshow/scratch")
+        
 		// Tournament
 		Tournament.resetGlobalVariables();
 		Tournament.INITIAL_AGENTS = [
