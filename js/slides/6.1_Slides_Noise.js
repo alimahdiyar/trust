@@ -9,6 +9,8 @@ SLIDES.push({
 
 		Tournament.resetGlobalVariables();
 
+		publish("slideshow/scratch")
+
 		// Iterated Simulation
 		self.add({id:"iterated", type:"Iterated", x:130, y:133});
 		o.iterated.dehighlightPayoff();
@@ -50,8 +52,6 @@ SLIDES.push({
 
 			}
 		});
-
-		publish("slideshow/scratch")
 
 		// Re-activate...
 		var _foreverWar = false;
