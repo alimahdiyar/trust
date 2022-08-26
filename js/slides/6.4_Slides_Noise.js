@@ -225,6 +225,8 @@ SLIDES.push({
 		/////////////////////////////////////////
 		// SHOW THE NEXT WORDS, and a NEXT
 
+        publish("slideshow/next")
+
 		// NEXT
 		var reproduceSteps = 0;
 		_.misc = {};
@@ -256,7 +258,7 @@ SLIDES.push({
 			}
 		});
         
-        publish("slideshow/next")
+        
 
 	},
 	onend: function(self){
