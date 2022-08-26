@@ -23,8 +23,6 @@ SLIDES.push({
 
 	onstart: function(self){
 
-        publish("slideshow/scratch")
-
 		// WORDS
 		self.add({
 			id:"score1", type:"TextBox",
