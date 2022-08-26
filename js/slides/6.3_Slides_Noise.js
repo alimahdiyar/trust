@@ -126,7 +126,6 @@ SLIDES.push({
 
 	},
 	onend: function(self){
-		self.remove("text_next");
 		self.remove("btn_next");
 	}
 });
