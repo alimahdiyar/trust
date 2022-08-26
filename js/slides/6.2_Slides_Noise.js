@@ -197,12 +197,12 @@ SLIDES.push({
                     });
                     _hide(o.text_next); _fadeIn(o.text_next, 100);
                     // BUTTON
-                    self.add({
-                        id:"btn_next", type:"Button", x:510, y:366, 
-                        text_id:"noise_evo_2_2_btn", size:"long",
-                        message:"slideshow/next"
-                    });
-                    _hide(o.btn_next); _fadeIn(o.btn_next, 300);
+                    // self.add({
+                    //     id:"btn_next", type:"Button", x:510, y:366, 
+                    //     text_id:"noise_evo_2_2_btn", size:"long",
+                    //     message:"slideshow/next"
+                    // });
+                    // _hide(o.btn_next); _fadeIn(o.btn_next, 300);
                 }
             }
         });
