@@ -124,28 +124,28 @@ SLIDES.push({
 		_hide(o.roundsSlider); _fadeIn(o.roundsSlider, 500);
 
 		// Continue...
-		listen(_.misc, "tournament/autoplay/start",function(){
-			if(_showContinue) _showContinue();
-		});
-		var _showContinue = function(){
-			_showContinue = null;
-			var x = 125;
-			var y = 430;
-			self.add({
-				id:"continueLabel", type:"TextBox",
-				x:x, y:y+5, width:200, height:50,
-				align:"right", color:"#aaa", size:17,
-				text_id:"distrust_2_end"
-			});
-			self.add({
-				id:"continueButton", type:"Button",
-				x:x+215, y:y, size:"short",
-				text_id:"label_continue",
-				message: "slideshow/next"
-			});
-			_hide(o.continueLabel); _fadeIn(o.continueLabel, 100);
-			_hide(o.continueButton); _fadeIn(o.continueButton, 100);
-		};
+		// listen(_.misc, "tournament/autoplay/start",function(){
+		// 	if(_showContinue) _showContinue();
+		// });
+		// var _showContinue = function(){
+		// 	_showContinue = null;
+		// 	var x = 125;
+		// 	var y = 430;
+		// 	self.add({
+		// 		id:"continueLabel", type:"TextBox",
+		// 		x:x, y:y+5, width:200, height:50,
+		// 		align:"right", color:"#aaa", size:17,
+		// 		text_id:"distrust_2_end"
+		// 	});
+		// 	self.add({
+		// 		id:"continueButton", type:"Button",
+		// 		x:x+215, y:y, size:"short",
+		// 		text_id:"label_continue",
+		// 		message: "slideshow/next"
+		// 	});
+		// 	_hide(o.continueLabel); _fadeIn(o.continueLabel, 100);
+		// 	_hide(o.continueButton); _fadeIn(o.continueButton, 100);
+		// };
 
 	},
 	onend: function(self){
