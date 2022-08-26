@@ -78,9 +78,9 @@ SLIDES.push({
 
 		var o = self.objects;
 		// Words
-		// var words = Words.get("noise_evo_2").replace(/\[CHAR\]/g, "<span class='"+_.answer+"'>"+Words.get("label_"+_.answer)+"</span>");
-		o.text.setText("");
-		// _hide(o.text); _fadeIn(o.text, 100);
+		var words = Words.get("noise_evo_2").replace(/\[CHAR\]/g, "<span class='"+_.answer+"'>"+Words.get("label_"+_.answer)+"</span>");
+		o.text.setText(words);
+		_hide(o.text); _fadeIn(o.text, 100);
 		/////////////////////////////////////////
 		// BUTTONS for playing //////////////////
 		/////////////////////////////////////////
