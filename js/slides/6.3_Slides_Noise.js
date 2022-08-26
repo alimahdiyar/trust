@@ -96,31 +96,31 @@ SLIDES.push({
         });
         _hide(o.btn_next); _fadeIn(o.btn_next, 300);
 
-        // self.add({
-		// 	id:"playButton", type:"Button", size:"short",
-		// 	x:x, y:y, text_id:"label_start",
-		// 	onclick: function(){
-		// 		if(o.tournament.isAutoPlaying){
-		// 			publish("tournament/autoplay/stop");
-		// 		}else{
-		// 			publish("tournament/autoplay/start");
-		// 		}
-		// 	}
-		// });
-		// listen(_, "tournament/autoplay/stop",function(){
-		// 	o.playButton.setText("label_start");
-		// });
-		// listen(_, "tournament/autoplay/start",function(){
-		// 	o.playButton.setText("label_stop");
-		// });
-		// self.add({
-		// 	id:"stepButton", type:"Button",  size:"short",
-		// 	x:x, y:y+dy, text_id:"label_step", message:"tournament/step"
-		// });
-		// self.add({
-		// 	id:"resetButton", type:"Button", size:"short",
-		// 	x:x, y:y+dy*2, text_id:"label_reset", message:"tournament/reset"
-		// });
+        self.add({
+			id:"playButton", type:"Button", size:"short",
+			x:x, y:y, text_id:"label_start",
+			onclick: function(){
+				if(o.tournament.isAutoPlaying){
+					publish("tournament/autoplay/stop");
+				}else{
+					publish("tournament/autoplay/start");
+				}
+			}
+		});
+		listen(_, "tournament/autoplay/stop",function(){
+			o.playButton.setText("label_start");
+		});
+		listen(_, "tournament/autoplay/start",function(){
+			o.playButton.setText("label_stop");
+		});
+		self.add({
+			id:"stepButton", type:"Button",  size:"short",
+			x:x, y:y+dy, text_id:"label_step", message:"tournament/step"
+		});
+		self.add({
+			id:"resetButton", type:"Button", size:"short",
+			x:x, y:y+dy*2, text_id:"label_reset", message:"tournament/reset"
+		});
 
         /////////////////////////////////////////
 		// SHOW THE NEXT WORDS, and a NEXT
@@ -159,41 +159,38 @@ SLIDES.push({
 			text_id:"noise_evo_3"
 		});
 
-		// HIDE PLAYER
-		_hide(o.playButton); o.playButton.deactivate();
-		_hide(o.stepButton); o.stepButton.deactivate();
-		_hide(o.resetButton); o.resetButton.deactivate();
-		// BETS
-		var _addButton = function(character, x, y){
-			(function(character, x, y){
-				self.add({
-					id:"bet_"+character, type:"Button", x:x, y:y, 
-					text_id: "icon_"+character,
-					tooltip: "who_"+character,
-					onclick:function(){
-						_.answer = character;
-						publish("slideshow/next");
-					}
-				});
-			})(character, x, y);
-		};
-		var x = 510;
-		var y = 295;
-		var dx = 200;
-		var dy = 70;
-		_addButton("tf2t", x, y); _addButton("pavlov", x+dx, y);
-		_addButton("random", x, y+dy); _addButton("tft", x+dx, y+dy);
-		_addButton("all_d", x, y+dy*2);
-		// WHO'S WHO?
-		self.add({
-			id:"forgot", type:"TextBox",
-			x:715, y:435, width:190, height:50,
-			align:"center", color:"#aaa", size:15,
-			text_id:"forgot_whos_who"
-		});
+        // BETS
+        var _addButton = function(character, x, y){
+            (function(character, x, y){
+                self.add({
+                    id:"bet_"+character, type:"Button", x:x, y:y, 
+                    text_id: "icon_"+character,
+                    tooltip: "who_"+character,
+                    onclick:function(){
+                        _.answer = character;
+                        publish("slideshow/next");
+                    }
+                });
+            })(character, x, y);
+        };
+        var x = 510;
+        var y = 295;
+        var dx = 200;
+        var dy = 70;
+        _addButton("tf2t", x, y); _addButton("pavlov", x+dx, y);
+        _addButton("random", x, y+dy); _addButton("tft", x+dx, y+dy);
+        _addButton("all_d", x, y+dy*2);
+
+        // WHO'S WHO?
+        self.add({
+            id:"forgot", type:"TextBox",
+            x:715, y:435, width:190, height:50,
+            align:"center", color:"#aaa", size:15,
+            text_id:"forgot_whos_who"
+        });
 	},
 	onend: function(self){
-		self.remove("bet_all_d");
+		self.remove("bet_all_c");
 		self.remove("bet_tft");
 		self.remove("bet_tf2t");
 		self.remove("bet_pavlov");
