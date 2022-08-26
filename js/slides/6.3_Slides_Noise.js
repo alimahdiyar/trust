@@ -139,7 +139,6 @@ SLIDES.push({
 	onstart: function(self){
 		var o = self.objects;
 		
-		_hide(o.text); _fadeIn(o.text, 100);
 		// Tournament
 		Tournament.resetGlobalVariables();
 		Tournament.INITIAL_AGENTS = [
