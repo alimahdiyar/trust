@@ -130,6 +130,7 @@ SLIDES.push({
 	onend: function(self){
 		// self.remove("text_next");
 		self.remove("btn_next");
+        self.clear()
 		// unlisten(_.misc);
 	}
 });
@@ -150,7 +151,15 @@ SLIDES.push({
 			{strategy:"all_d", count:13}
 		];
 		PD.NOISE = 0.05;
-		o.tournament.reset();
+		self.add({id:"tournament", type:"Tournament", x:-20, y:20});
+
+		// Words to the side
+		self.add({
+			id:"text", type:"TextBox",
+			x:510, y:30, width:450, height:500,
+			text_id:"noise_evo_1"
+		});
+
 		// HIDE PLAYER
 		_hide(o.playButton); o.playButton.deactivate();
 		_hide(o.stepButton); o.stepButton.deactivate();
