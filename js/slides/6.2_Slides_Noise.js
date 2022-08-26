@@ -196,6 +196,7 @@ SLIDES.push({
                         text: words
                     });
                     _hide(o.text_next); _fadeIn(o.text_next, 100);
+
                     // BUTTON
                     // self.add({
                     //     id:"btn_next", type:"Button", x:510, y:366, 
