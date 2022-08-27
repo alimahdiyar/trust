@@ -210,19 +210,41 @@ SLIDES.push({
 		});
 		_hide(o.autoplay); _fadeIn(o.autoplay, 1200);
 
+        // Listen...
+		var step = 0;
+		listen(_, "tournament/step/completed", function(aahhhh){
+			step++;
+			if(step==13){
+				_goOn();
+			}
+		});
 
-        // Button: next (hidden)
-        self.add({
-            id:"next", type:"Button", x:510, y:450, 
-            text_id:"evo_10_btn", size:"long",
-            message: "slideshow/next"
-        });
-        _hide(o.next); _fadeIn(o.next, 600);
-        // 
-        // publish("slideshow/next");        
+		var _goOn = function(){
+
+			// Text followup (hidden)
+			self.add({
+				id:"text2", type:"TextBox",
+				x:510, y:180, width:450, height:500,
+				text_id:"evo_10_followup"
+			});
+			_hide(o.text2); _fadeIn(o.text2, 400);
+
+			// Button: next (hidden)
+			self.add({
+				id:"next", type:"Button", x:510, y:450, 
+				text_id:"evo_10_btn", size:"long",
+				message: "slideshow/next"
+			});
+			_hide(o.next); _fadeIn(o.next, 600);
+            
+		};
+
+        publish("slideshow/next");
+        
 
 	},
 	onend: function(self){
+		unlisten(_);
 		self.remove("autoplay");
 		self.remove("text2");
 		self.remove("next");
