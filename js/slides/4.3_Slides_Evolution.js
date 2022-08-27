@@ -236,10 +236,10 @@ SLIDES.push({
 				message: "slideshow/next"
 			});
 			_hide(o.next); _fadeIn(o.next, 600);
-            
+            // 
 		};
 
-        publish("slideshow/next");        
+        // publish("slideshow/next");        
 
 	},
 	onend: function(self){
