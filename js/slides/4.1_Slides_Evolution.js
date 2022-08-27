@@ -215,6 +215,22 @@ SLIDES.push({
 	},
 	onend: function(self){
 		self.remove("button");
-		self.clear()
+	}
+});
+
+// Result Explanation
+SLIDES.push({
+	onstart: function(self){
+
+		var o = self.objects;
+
+		// What was your bet?
+		var response = Words.get("evo_9_btn");
+		o.text.setText(response);
+		_hide(o.text); _fadeIn(o.text, 100);
+
+	},
+	onend: function(self){
+		self.clear();
 	}
 });
