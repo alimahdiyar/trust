@@ -231,13 +231,13 @@ SLIDES.push({
 			});
 			_hide(o.text2); _fadeIn(o.text2, 400);
 
-			// Button: next (hidden)
-			self.add({
-				id:"next", type:"Button", x:510, y:450, 
-				text_id:"evo_10_btn", size:"long",
-				message: "slideshow/next"
-			});
-			_hide(o.next); _fadeIn(o.next, 600);
+			// // Button: next (hidden)
+			// self.add({
+			// 	id:"next", type:"Button", x:510, y:450, 
+			// 	text_id:"evo_10_btn", size:"long",
+			// 	message: "slideshow/next"
+			// });
+			// _hide(o.next); _fadeIn(o.next, 600);
 
 		};
 
