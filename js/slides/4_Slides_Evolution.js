@@ -168,8 +168,8 @@ SLIDES.push({
 					}else{
 						response = Words.get("evo_"+textStep);
 					}
-					o.text.setText(response);
-					_hide(o.text); _fadeIn(o.text, 100);
+					// o.text.setText(response);
+					// _hide(o.text); _fadeIn(o.text, 100);
 					_showButtons();
 				}else{
 					publish("slideshow/next");
