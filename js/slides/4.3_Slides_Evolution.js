@@ -4,7 +4,6 @@ Loader.addToManifest(Loader.manifest,{
 });
 
 // Place Your Bets
-
 SLIDES.push({
 	onstart: function(self){
 
@@ -49,9 +48,7 @@ SLIDES.push({
 			align:"center", color:"#aaa", size:16,
 			text_id:"forgot_whos_who"
 		});
-
         publish("slideshow/next");
-
 	},
 	onend: function(self){
 		self.remove("bet_tft");
@@ -133,7 +130,6 @@ SLIDES.push({
 			_hide(o.step_3); _fadeIn(o.step_3, 700);
 		};
 		_showButtons();
-        publish("slideshow/next");
 
 	},
 	onend: function(self){
@@ -163,7 +159,6 @@ SLIDES.push({
 		});
 		_hide(o.button); _fadeIn(o.button, 400);
         publish("slideshow/next");
-        
 	},
 	onend: function(self){
 		self.remove("button");
@@ -238,8 +233,10 @@ SLIDES.push({
 				message: "slideshow/next"
 			});
 			_hide(o.next); _fadeIn(o.next, 600);
-
+            
 		};
+        
+        publish("slideshow/next");
 
 	},
 	onend: function(self){
@@ -250,41 +247,41 @@ SLIDES.push({
 	}
 });
 
-// // Problem 1: Number of interactions
-// SLIDES.push({
-// 	onstart: function(self){
-// 		var o = self.objects;
+// Problem 1: Number of interactions
+SLIDES.push({
+	onstart: function(self){
+		var o = self.objects;
 
-// 		// FART SOUNDS
-// 		Loader.sounds.fart.play();
+		// FART SOUNDS
+		Loader.sounds.fart.play();
 
-// 		// New tournament...
-// 		Tournament.resetGlobalVariables();
-// 		Tournament.INITIAL_AGENTS = [
-// 			{strategy:"all_d", count:24},
-// 			{strategy:"tft", count:1}
-// 		];
-// 		o.tournament.reset();
+		// New tournament...
+		Tournament.resetGlobalVariables();
+		Tournament.INITIAL_AGENTS = [
+			{strategy:"all_d", count:24},
+			{strategy:"tft", count:1}
+		];
+		o.tournament.reset();
 
-// 		// Text
-// 		o.text.setTextID("evo_11");
-// 		//_hide(o.text); _fadeIn(o.text, 100);
+		// Text
+		o.text.setTextID("evo_11");
+		//_hide(o.text); _fadeIn(o.text, 100);
 
-// 		// Next
-// 		self.add({
-// 			id:"next", type:"Button", x:510, y:425, 
-// 			text_id:"evo_11_btn", size:"long",
-// 			message: "slideshow/next"
-// 		});
-// 		//_hide(o.next); _fadeIn(o.next, 200);
+		// Next
+		self.add({
+			id:"next", type:"Button", x:510, y:425, 
+			text_id:"evo_11_btn", size:"long",
+			message: "slideshow/next"
+		});
+		//_hide(o.next); _fadeIn(o.next, 200);
 
-// 	},
-// 	onend: function(self){
-// 		self.remove("text");
-// 		self.remove("next");
-// 		_.clear();
-// 	}
-// });
+	},
+	onend: function(self){
+		self.remove("text");
+		self.remove("next");
+		_.clear();
+	}
+});
 
 // Problem 2: Payoffs
 
