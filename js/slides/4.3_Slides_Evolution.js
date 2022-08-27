@@ -120,7 +120,6 @@ SLIDES.push({
 					_hide(o.text); _fadeIn(o.text, 100);
 					_showButtons();
 				}else{
-					publish("slideshow/next");
 				}
 			}
 		});
@@ -130,6 +129,7 @@ SLIDES.push({
 			_hide(o.step_3); _fadeIn(o.step_3, 700);
 		};
 		_showButtons();
+        publish("slideshow/next");
 
 	},
 	onend: function(self){
