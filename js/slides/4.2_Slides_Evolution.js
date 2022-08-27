@@ -162,7 +162,8 @@ SLIDES.push({
 			message: "slideshow/next"
 		});
 		_hide(o.button); _fadeIn(o.button, 400);
-
+        publish("slideshow/next");
+        
 	},
 	onend: function(self){
 		self.remove("button");
