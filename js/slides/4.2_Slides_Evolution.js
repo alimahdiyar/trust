@@ -3,59 +3,8 @@ Loader.addToManifest(Loader.manifest,{
 	fart: "assets/sounds/fart.mp3"
 });
 
-// Evolution Intro
-SLIDES.push({
-	id: "evolution",
-	onstart: function(self){
-
-		// WORDS
-		self.add({
-			id:"text1", type:"TextBox",
-			x:0, y:20, width:774, height:42,
-			text_id:"evolution_intro"
-		});
-		self.add({
-			id:"text2", type:"TextBox",
-			x:0, y:235, width:287, height:117, align:"center",
-			text_id:"evolution_intro_1"
-		});
-		self.add({
-			id:"text3", type:"TextBox",
-			x:336, y:235, width:287, height:117, align:"center",
-			text_id:"evolution_intro_2"
-		});
-		self.add({
-			id:"text4", type:"TextBox",
-			x:669, y:235, width:287, height:117, align:"center",
-			text_id:"evolution_intro_3"
-		});
-		self.add({
-			id:"text5", type:"TextBox",
-			x:132, y:370, width:817, height:95, align:"right",
-			text_id:"evolution_intro_footer"
-		});
-
-		// IMAGE
-		self.add({
-			id:"img", type:"ImageBox",
-			src: "assets/evolution/evolution_intro.png",
-			x:0, y:60, width:960, height:170
-		});
-
-		// Button
-		self.add({
-			id:"button", type:"Button", x:615, y:466, 
-			text_id:"evolution_intro_button", size:"long",
-			message:"slideshow/scratch"
-		});
-
-	},
-	onend: function(self){
-		self.clear();
-	}
-});
-
 // Place Your Bets
+
 SLIDES.push({
 	onstart: function(self){
 
@@ -100,6 +49,8 @@ SLIDES.push({
 			align:"center", color:"#aaa", size:16,
 			text_id:"forgot_whos_who"
 		});
+
+        publish("slideshow/next");
 
 	},
 	onend: function(self){
@@ -182,6 +133,7 @@ SLIDES.push({
 			_hide(o.step_3); _fadeIn(o.step_3, 700);
 		};
 		_showButtons();
+        publish("slideshow/next");
 
 	},
 	onend: function(self){
