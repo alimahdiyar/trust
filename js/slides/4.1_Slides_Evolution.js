@@ -215,5 +215,6 @@ SLIDES.push({
 	},
 	onend: function(self){
 		self.remove("button");
+		self.clear()
 	}
 });
