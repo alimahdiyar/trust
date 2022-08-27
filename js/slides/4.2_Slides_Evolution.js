@@ -247,6 +247,7 @@ SLIDES.push({
 		self.remove("autoplay");
 		self.remove("text2");
 		self.remove("next");
+        self.clear();
 	}
 });
 
