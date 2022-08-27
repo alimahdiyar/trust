@@ -16,8 +16,6 @@ SLIDES.push({
 		];
 		self.add({id:"tournament", type:"Tournament", x:-20, y:20});
 
-        publish("slideshow/next");
-
 		// Words to the side
 		self.add({
 			id:"text", type:"TextBox",
@@ -51,6 +49,8 @@ SLIDES.push({
 			text_id:"forgot_whos_who"
 		});
 
+        publish("slideshow/next");
+
 	},
 	onend: function(self){
 		self.remove("bet_tft");
@@ -65,8 +65,6 @@ SLIDES.push({
 	onstart: function(self){
 
 		var o = self.objects;
-
-        publish("slideshow/next");
 
 		// What was your bet?
 		var response = Words.get("evo_2_"+_.answer)+" "+Words.get("evo_2");
@@ -134,7 +132,7 @@ SLIDES.push({
 			_hide(o.step_3); _fadeIn(o.step_3, 700);
 		};
 		_showButtons();
-
+        publish("slideshow/next");
 	},
 	onend: function(self){
 		unlisten(_);
@@ -150,7 +148,6 @@ SLIDES.push({
 
 		var o = self.objects;
         
-        publish("slideshow/next");
 		
         // What was your bet?
 		var response = Words.get("evo_9")+"<br><br>"+Words.get("evo_9_"+_.answer)+" "+Words.get("evo_9_end");
@@ -164,7 +161,7 @@ SLIDES.push({
 			message: "slideshow/next"
 		});
 		_hide(o.button); _fadeIn(o.button, 400);
-
+        publish("slideshow/next");
 	},
 	onend: function(self){
 		self.remove("button");
@@ -213,10 +210,6 @@ SLIDES.push({
 		});
 		_hide(o.autoplay); _fadeIn(o.autoplay, 1200);
 
-		
-        publish("slideshow/next");
-        
-        
         // Listen...
 		var step = 0;
 		listen(_, "tournament/step/completed", function(aahhhh){
@@ -245,7 +238,8 @@ SLIDES.push({
 			_hide(o.next); _fadeIn(o.next, 600);
             
 		};
-        
+
+        publish("slideshow/next");        
 
 	},
 	onend: function(self){
