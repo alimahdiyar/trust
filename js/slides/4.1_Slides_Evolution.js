@@ -208,7 +208,7 @@ SLIDES.push({
 		self.add({
 			id:"button", type:"Button", x:510, y:320, 
 			text_id:"evo_9_btn", size:"long",
-			message: "slideshow/next"
+			// message: "slideshow/next"
 		});
 		_hide(o.button); _fadeIn(o.button, 400);
 
