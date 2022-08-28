@@ -238,9 +238,9 @@ SLIDES.push({
 
 					// BUTTON
 					self.add({
-						id:"btn_next", type:"Text", x:510, y:446, 
+						id:"btn_next", type:"Button", x:510, y:446, 
 						text_id:"noise_evo_4_2_btn", size:"long",
-						message:"slideshow/next"
+						message:"slideshow/scratch"
 					});
 					_hide(o.btn_next); _fadeIn(o.btn_next, 300);
 
