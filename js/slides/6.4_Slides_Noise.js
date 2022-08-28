@@ -321,20 +321,20 @@ SLIDES.push({
 		});
 		var _showContinue = function(){
 			_showContinue = null;
-			self.add({
-				id:"continueLabel", type:"TextBox",
-				x:565, y:405, width:400,
-				align:"right", color:"#aaa", size:17,
-				text_id:"noise_evo_5_continue"
-			});
-			self.add({
-				id:"continueButton", type:"Button",
-				x:855, y:440, size:"short",
-				text_id:"label_continue",
-				message: "slideshow/next"
-			});
-			_hide(o.continueLabel); _fadeIn(o.continueLabel, 100);
-			_hide(o.continueButton); _fadeIn(o.continueButton, 100);
+			// self.add({
+			// 	id:"continueLabel", type:"TextBox",
+			// 	x:565, y:405, width:400,
+			// 	align:"right", color:"#aaa", size:17,
+			// 	text_id:"noise_evo_5_continue"
+			// });
+			// self.add({
+			// 	id:"continueButton", type:"Button",
+			// 	x:855, y:440, size:"short",
+			// 	text_id:"label_continue",
+			// 	message: "slideshow/next"
+			// });
+			// _hide(o.continueLabel); _fadeIn(o.continueLabel, 100);
+			// _hide(o.continueButton); _fadeIn(o.continueButton, 100);
 		};
 
 	},
