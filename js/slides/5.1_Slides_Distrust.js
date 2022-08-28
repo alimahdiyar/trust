@@ -123,13 +123,24 @@ SLIDES.push({
 		_hide(o.roundsLabel); _fadeIn(o.roundsLabel, 500);
 		_hide(o.roundsSlider); _fadeIn(o.roundsSlider, 500);
 
-		self.add({
-			id:"question", type:"TextBox",
-			x:x+275, y:y+50, width:450, height:500,
-			text_id:"distrust_2_end"
-		});
-		_hide(o.question); _fadeIn(o.question, 500);
 		
+		// Continue...
+		listen(_.misc, "tournament/autoplay/start",function(){
+			if(_showContinue) _showContinue();
+		});
+		var _showContinue = function(){
+			_showContinue = null;
+			var x = 125;
+			var y = 430;
+			self.add({
+				id:"question", type:"TextBox",
+				x:x, y:y+5, width:200, height:50,
+				align:"right", color:"#aaa", size:17,
+				text_id:"distrust_2_end"
+			});
+			_hide(o.question); _fadeIn(o.question, 500);
+
+		};
 
 	},
 	onend: function(self){
