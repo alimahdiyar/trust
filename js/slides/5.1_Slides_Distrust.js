@@ -125,8 +125,8 @@ SLIDES.push({
 
 		self.add({
 			id:"question", type:"TextBox",
-			x:510, y:30, width:450, height:500,
-			text_id:"evo_1distrust_2_end"
+			x:0, y:130, width:450, height:500,
+			text_id:"distrust_2_end"
 		});
 		_hide(o.question); _fadeIn(o.question, 500);
 		
