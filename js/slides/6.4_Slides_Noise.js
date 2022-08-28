@@ -9,7 +9,7 @@ SLIDES.push({
 
 		var o = self.objects;
 
-
+        publish("slideshow/scratch")
 		// Tournament
 		Tournament.resetGlobalVariables();
 		Tournament.INITIAL_AGENTS = [
@@ -59,8 +59,6 @@ SLIDES.push({
 			text_id:"forgot_whos_who"
 		});
 
-        publish("slideshow/next")
-
 	},
 	onend: function(self){
 		self.remove("bet_all_c");
@@ -72,73 +70,71 @@ SLIDES.push({
 	}
 });
 
-// SLIDES.push({
-// 	onstart: function(self){
-
-//         var o = self.objects;
-
-// 		// Words
-// 		var words = Words.get("noise_evo_2").replace(/\[CHAR\]/g, "<span class='"+_.answer+"'>"+Words.get("label_"+_.answer)+"</span>");
-// 		o.text.setText(words);
-// 		_hide(o.text); _fadeIn(o.text, 100);
-
-// 		/////////////////////////////////////////
-// 		// BUTTONS for playing //////////////////
-// 		/////////////////////////////////////////
-
-// 		var x = 172;
-// 		var y = 175;
-// 		var dy = 70;
-// 		self.add({
-// 			id:"playButton", type:"Button", size:"short",
-// 			x:x, y:y, text_id:"label_start",
-// 			onclick: function(){
-// 				if(o.tournament.isAutoPlaying){
-// 					publish("tournament/autoplay/stop");
-// 				}else{
-// 					publish("tournament/autoplay/start");
-// 				}
-// 			}
-// 		});
-// 		listen(_, "tournament/autoplay/stop",function(){
-// 			o.playButton.setText("label_start");
-// 		});
-// 		listen(_, "tournament/autoplay/start",function(){
-// 			o.playButton.setText("label_stop");
-// 		});
-// 		self.add({
-// 			id:"stepButton", type:"Button",  size:"short",
-// 			x:x, y:y+dy, text_id:"label_step", message:"tournament/step"
-// 		});
-// 		self.add({
-// 			id:"resetButton", type:"Button", size:"short",
-// 			x:x, y:y+dy*2, text_id:"label_reset", message:"tournament/reset"
-// 		});
-
-// 		/////////////////////////////////////////
-// 		// SHOW THE NEXT WORDS, and a NEXT
-
-// 		// BUTTON
-//         self.add({
-//             id:"btn_next", type:"Button", x:510, y:366, 
-//             text_id:"noise_evo_2_2_btn", size:"long",
-//             message:"slideshow/next"
-//         });
-//         _hide(o.btn_next); _fadeIn(o.btn_next, 300);
-
-//         publish("slideshow/next")
-
-// 	},
-// 	onend: function(self){
-// 		self.remove("btn_next");
-// 	}
-// });
-
 SLIDES.push({
 	onstart: function(self){
 
 		var o = self.objects;
 
+		// Words
+		var words = Words.get("noise_evo_2").replace(/\[CHAR\]/g, "<span class='"+_.answer+"'>"+Words.get("label_"+_.answer)+"</span>");
+		o.text.setText(words);
+		_hide(o.text); _fadeIn(o.text, 100);
+
+		/////////////////////////////////////////
+		// BUTTONS for playing //////////////////
+		/////////////////////////////////////////
+
+		var x = 172;
+		var y = 175;
+		var dy = 70;
+		self.add({
+			id:"playButton", type:"Button", size:"short",
+			x:x, y:y, text_id:"label_start",
+			onclick: function(){
+				if(o.tournament.isAutoPlaying){
+					publish("tournament/autoplay/stop");
+				}else{
+					publish("tournament/autoplay/start");
+				}
+			}
+		});
+		listen(_, "tournament/autoplay/stop",function(){
+			o.playButton.setText("label_start");
+		});
+		listen(_, "tournament/autoplay/start",function(){
+			o.playButton.setText("label_stop");
+		});
+		self.add({
+			id:"stepButton", type:"Button",  size:"short",
+			x:x, y:y+dy, text_id:"label_step", message:"tournament/step"
+		});
+		self.add({
+			id:"resetButton", type:"Button", size:"short",
+			x:x, y:y+dy*2, text_id:"label_reset", message:"tournament/reset"
+		});
+
+		/////////////////////////////////////////
+		// SHOW THE NEXT WORDS, and a NEXT
+
+		// BUTTON
+        self.add({
+            id:"btn_next", type:"Button", x:510, y:366, 
+            text_id:"noise_evo_2_2_btn", size:"long",
+            message:"slideshow/next"
+        });
+        _hide(o.btn_next); _fadeIn(o.btn_next, 300);
+		publish("slideshow/next")
+
+	},
+	onend: function(self){
+		self.remove("btn_next");
+	}
+});
+
+SLIDES.push({
+	onstart: function(self){
+
+		var o = self.objects;
 
 		// Words
 		o.text.setTextID("noise_evo_3");
@@ -191,7 +187,7 @@ SLIDES.push({
 			text_id:"forgot_whos_who"
 		});
 
-        publish("slideshow/next")
+		publish("slideshow/next");
 
 	},
 	onend: function(self){
@@ -209,8 +205,6 @@ SLIDES.push({
 
 		var o = self.objects;
 
-        
-
 		// SHOW PLAYER
 		_fadeIn(o.playButton,1); o.playButton.activate();
 		_fadeIn(o.stepButton,1); o.stepButton.activate();
@@ -224,8 +218,6 @@ SLIDES.push({
 
 		/////////////////////////////////////////
 		// SHOW THE NEXT WORDS, and a NEXT
-
-        publish("slideshow/next")
 
 		// NEXT
 		var reproduceSteps = 0;
@@ -246,19 +238,19 @@ SLIDES.push({
 					});
 					_hide(o.text_next); _fadeIn(o.text_next, 100);
 
-					// BUTTON
-					self.add({
-						id:"btn_next", type:"Button", x:510, y:446, 
-						text_id:"noise_evo_4_2_btn", size:"long",
-						message:"slideshow/next"
-					});
-					_hide(o.btn_next); _fadeIn(o.btn_next, 300);
+					// // BUTTON
+					// self.add({
+					// 	id:"btn_next", type:"Button", x:510, y:446, 
+					// 	text_id:"noise_evo_4_2_btn", size:"long",
+					// 	message:"slideshow/scratch"
+					// });
+					// _hide(o.btn_next); _fadeIn(o.btn_next, 300);
 
 				}
 			}
 		});
-        
-        
+
+		publish("slideshow/next");
 
 	},
 	onend: function(self){
@@ -280,12 +272,6 @@ SLIDES.push({
 
 		// Tournament
 		o.tournament.reset();
-
-		// SHOW PLAYER
-		_fadeIn(o.playButton,1); o.playButton.activate();
-		_fadeIn(o.stepButton,1); o.stepButton.activate();
-		_fadeIn(o.resetButton,1); o.resetButton.activate();
-		o.playButton.setText("label_start");
 
 		// Slider!
 		var x = 510;
