@@ -130,7 +130,7 @@ SLIDES.push({
 		});
 		var _showContinue = function(){
 			_showContinue = null;
-			var x = 125;
+			var x = 25;
 			var y = 430;
 			self.add({
 				id:"question", type:"TextBox",
