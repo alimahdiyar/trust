@@ -109,171 +109,36 @@ SLIDES.push({
 			message: "rules/turns"
 		});
 		_.misc = {};
-		// var _updateLabel = function(value){
-		// 	var words = (value==1) ? Words.get("sandbox_rules_1_single") : Words.get("sandbox_rules_1"); // plural?
-		// 	words = words.replace(/\[N\]/g, value+""); // replace [N] with the number value
-		// 	o.roundsLabel.setText("<b>"+words+"</b>");
-		// };
-		// listen(_.misc, "rules/turns", function(value){
-		// 	_updateLabel(value);
-		// 	o.tournament.reset();
-		// });
+		var _updateLabel = function(value){
+			var words = (value==1) ? Words.get("sandbox_rules_1_single") : Words.get("sandbox_rules_1"); // plural?
+			words = words.replace(/\[N\]/g, value+""); // replace [N] with the number value
+			o.roundsLabel.setText("<b>"+words+"</b>");
+		};
+		listen(_.misc, "rules/turns", function(value){
+			_updateLabel(value);
+			o.tournament.reset();
+		});
 		o.roundsSlider.setValue(10);
 		_updateLabel(10);
 		_hide(o.roundsLabel); _fadeIn(o.roundsLabel, 500);
 		_hide(o.roundsSlider); _fadeIn(o.roundsSlider, 500);
+
+		self.add({
+			id:"question", type:"TextBox",
+			x:510, y:30, width:450, height:500,
+			text_id:"evo_1distrust_2_end"
+		});
+		_hide(o.question); _fadeIn(o.question, 500);
+		
 
 	},
 	onend: function(self){
 		unlisten(_.misc);
 		self.remove("roundsLabel");
 		self.remove("roundsSlider");
+		self.remove("question");
 		var o = self.objects;
 		if(o.continueLabel) self.remove("continueLabel");
 		if(o.continueButton) self.remove("continueButton");
 	}
 });
-
-// // Explain that...
-// SLIDES.push({
-// 	onstart: function(self){
-
-// 		var o = self.objects;
-
-// 		// Words
-// 		o.text.setTextID("distrust_3");
-// 		_hide(o.text); _fadeIn(o.text, 100);
-
-// 		// Worse...
-// 		self.add({
-// 			id:"next", type:"Button",
-// 			x:0, y:450, size:"long",
-// 			text_id:"distrust_3_btn",
-// 			message: "slideshow/next"
-// 		});
-// 		_hide(o.next); _fadeIn(o.next, 400);
-
-// 	},
-// 	onend: function(self){	
-// 		self.remove("text");
-// 		self.remove("next");
-// 	}
-// });
-
-// // Change PAYOFFS
-// SLIDES.push({
-// 	onstart: function(self){
-
-// 		var o = self.objects;
-// 		_.misc = {};
-
-// 		// Words
-// 		self.add({
-// 			id:"text", type:"TextBox",
-// 			x:0, y:0, width:450, height:500,
-// 			text_id:"distrust_4"
-// 		});
-// 		_hide(o.text); _fadeIn(o.text, 100);
-
-// 		// PAYOFFS
-// 		self.add({
-// 			id:"payoffs", type:"PayoffsUI",
-// 			x:105, y:73, scale:0.8, slideshow:self
-// 		});
-// 		_hide(o.payoffs); _fadeIn(o.payoffs, 300);
-// 		listen(_.misc, "payoffs/onchange", function(value){
-// 			o.tournament.reset();
-// 		});
-
-// 		// More words
-// 		self.add({
-// 			id:"text2", type:"TextBox",
-// 			x:0, y:320, width:450, height:500,
-// 			text_id:"distrust_4_2"
-// 		});
-// 		_hide(o.text2); _fadeIn(o.text2, 500);
-
-// 		// Note 1
-// 		var _showContinue = function(){
-// 			_showContinue = null;
-// 			self.add({
-// 				id:"continueLabel", type:"TextBox",
-// 				x:0, y:480, width:320, 
-// 				align:"right", color:"#aaa", size:17,
-// 				text_id:"distrust_4_note"
-// 			});
-// 			self.add({
-// 				id:"continueButton", type:"Button",
-// 				x:340, y:471, size:"short",
-// 				text_id:"label_continue",
-// 				message: "slideshow/next"
-// 			});
-// 			_hide(o.continueLabel); _fadeIn(o.continueLabel, 100);
-// 			_hide(o.continueButton); _fadeIn(o.continueButton, 100);
-// 		};
-// 		listen(_.misc, "tournament/autoplay/start",function(){
-// 			if(_showContinue) _showContinue();
-// 		});
-
-// 		// Note 2
-// 		self.add({
-// 			id:"note2", type:"TextBox",
-// 			x:583, y:510, width:300, height:50,
-// 			align:"center", color:"#aaa", size:17,
-// 			text_id:"distrust_4_note_2"
-// 		});
-// 		_hide(o.note2); _fadeIn(o.note2, 500);
-
-// 		// TOURNAMENT
-// 		Tournament.resetGlobalVariables();
-// 		Tournament.INITIAL_AGENTS = [
-// 			{strategy:"all_c", count:23},
-// 			{strategy:"all_d", count:1},
-// 			{strategy:"tft", count:1}
-// 		];
-// 		Tournament.NUM_TURNS = 10;
-// 		o.tournament.reset();
-
-// 	},
-// 	onend: function(self){
-// 		unlisten(_.misc);
-// 		self.remove("text");
-// 		self.remove("payoffs");
-// 		self.remove("text2");
-// 		self.remove("note2");
-// 		var o = self.objects;
-// 		if(o.continueLabel) self.remove("continueLabel");
-// 		if(o.continueButton) self.remove("continueButton");
-// 	}
-// });
-
-// // Explain that...
-// SLIDES.push({
-// 	onstart: function(self){
-
-// 		var o = self.objects;
-
-// 		// Words
-// 		self.add({
-// 			id:"text", type:"TextBox",
-// 			x:0, y:30, width:450, height:500,
-// 			text_id:"distrust_5"
-// 		});
-// 		_hide(o.text); _fadeIn(o.text, 100);
-
-// 		// Worse...
-// 		self.add({
-// 			id:"next", type:"Button",
-// 			x:0, y:450, size:"long",
-// 			text_id:"distrust_5_btn",
-// 			message: "slideshow/scratch"
-// 		});
-// 		_hide(o.next); _fadeIn(o.next, 400);
-
-// 	},
-// 	onend: function(self){	
-// 		unlisten(_);
-// 		unlisten(_.misc);
-// 		self.clear();
-// 	}
-// });
