@@ -225,7 +225,7 @@ SLIDES.push({
 		var o = self.objects;
 
 		// What was your bet?
-		var response = Words.get("evo_9_btn");
+		var response = Words.get("evo_9_extra");
 		o.text.setText(response);
 		_hide(o.text); _fadeIn(o.text, 100);
 
